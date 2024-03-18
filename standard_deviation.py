@@ -20,6 +20,7 @@ def main():
         sum_of_reaction_times += i
 
     mean = sum_of_reaction_times / len(reaction_times)
+    rounded_mean = round(mean, 4)
     standard_deviation = float(input("Input standard deviation: \n> "))
 
     # Calculating the range
@@ -29,8 +30,8 @@ def main():
 
     # Calculating how many values are within one standard deviation of the mean
     values_within_std_dev = sum(1 for time in reaction_times if (mean - standard_deviation) < time < (mean + standard_deviation))
-
-    print("mean: " + str(mean))
+    
+    print("mean: " + str(rounded_mean))
     print("highest value: " + str(highest_value))
     print("lowest value " + str(lowest_value))
     print("range: " + str(range_of_data))
